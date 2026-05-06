@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <p-card header="Heat Index Calculator">
+
+    <div class="toolbar">
+
+      <p-inputNumber
+        [(ngModel)]="temperature"
+        placeholder="Temperature"
+        [min]="-50"
+        [max]="100"
+      ></p-inputNumber>
+
+      <p-select
+        [options]="units"
+        [(ngModel)]="unit"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Select unit"
+      ></p-select>
+
+      <p-inputNumber
+        [(ngModel)]="humidity"
+        placeholder="Humidity (%)"
+        [min]="0"
+        [max]="100"
+      ></p-inputNumber>
+
+      <button
+        pButton
+        label="Calculate"
+        (click)="calculate()"
+      ></button>
+
+      <div *ngIf="result !== null">
+        <b>Result:</b> {{ result | number:'1.1-2' }} °{{ unit }}
+      </div>
+
+      <div *ngIf="error" style="color: red;">
+        {{ error }}
+      </div>
+
+    </div>
+
+  </p-card>
+</div>

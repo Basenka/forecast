@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  justify-content: left;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  padding: 12px;
+  margin-bottom: 12px;
+
+  background: #f8fafc;
+  border-radius: 12px;
+}
