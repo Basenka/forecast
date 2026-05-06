@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { TabsModule } from 'primeng/tabs';
+
+import { WeatherTable } from './pages/weather-table/weather-table';
+import { TemperatureChart } from './pages/temperature-chart/temperature-chart';
+import { HeatIndex } from './pages/heat-index/heat-index';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    TabsModule,
+    WeatherTable,
+    TemperatureChart,
+    HeatIndex
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('Forecast');
-}
+export class App {}
